@@ -37,7 +37,7 @@
                 $salida .= "<td>
                                     <a href='f_add_product.php'><span class='badge badge-enviar'><i class='fas fa-plus'></i></span></a> 
                                     <a href='f_edit_product.php?id=" . (int)$product['id']  . "'><span class='badge badge-editar'><i class='fas fa-edit'></i></span></a> 
-                                    <a href='f_delete_product.php?id=" . (int)$product['id'] . "'><span class='badge badge-eliminar'><i class='fas fa-trash'></i></span></a> 
+                                    <a href='p_delete_product.php?id=" . (int)$product['id'] . "'><span class='badge badge-eliminar'><i class='fas fa-trash'></i></span></a> 
                                 </td> ";
                 $salida .= "</tr>";
 

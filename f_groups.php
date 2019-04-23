@@ -82,7 +82,7 @@
                                                                 <td class="text-center" colspan="2">
                                                                 <a href="f_add_group.php"><span class="badge badge-enviar">Agregar</span></a>
                                                                 <a href="f_edit_group.php?id=<?php echo (int)$a_group['id'];?>"><span class="badge badge-editar">Editar</span></a>
-                                                                <a href="f_delete_group.php?id=<?php echo (int)$a_group['id'];?>"><span class="badge badge-eliminar">Eliminar</span></a>
+                                                                <a href="p_delete_group.php?id=<?php echo (int)$a_group['id'];?>"><span class="badge badge-eliminar">Eliminar</span></a>
                                                                 </td>
                                                             </tr>
                                                         <?php endforeach; ?>                                                            

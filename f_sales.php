@@ -73,7 +73,7 @@
                                                                 <td><span class="pruduct"><?php echo remove_junk($sale['price']); ?></span></td>
                                                                 <td><span><?php echo $sale['date']; ?></span></td>
                                                                 <td class="text-center">
-                                                                   <a href="f_delete_sale.php?id=<?php echo (int)$sale['id'];?>"> <span class="badge badge-eliminar">Eliminar</span></a>
+                                                                   <a href="p_delete_sale.php?id=<?php echo (int)$sale['id'];?>"> <span class="badge badge-eliminar">Eliminar</span></a>
                                                                 </td>
                                                             </tr>
                                                         <?php endforeach;?>

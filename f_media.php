@@ -121,7 +121,7 @@
                                                                 
                                                                 <td class="text-center" >
                                                                 
-                                                                <a href="f_delete_media.php?id=<?php echo (int) $media_file['id'];?>"><span class="badge badge-eliminar">Eliminar</span></a>
+                                                                <a href="p_delete_media.php?id=<?php echo (int) $media_file['id'];?>"><span class="badge badge-eliminar">Eliminar</span></a>
                                                                 </td>
                                                             </tr>
                                                         <?php endforeach;?>
