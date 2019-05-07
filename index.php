@@ -58,7 +58,7 @@
     </div>
 
     <div class='disclaimer'>
-      <p>VENTA DE VEGETALES</p>
+      <p>VENTA DE PRODUCTOS VEGETARIANOS</p>
     </div>
   </form>
 
