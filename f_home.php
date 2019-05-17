@@ -26,7 +26,7 @@
                     <?php echo display_msg($msg); ?>
                     </div>
                 </div>
-                    
+
                     <!-- Widgets  -->
                     <div class="row">
                         <div class="col-sm-12 col-lg-3">
@@ -34,20 +34,20 @@
                                 <div class="card-body">
                                     <div class="card-left pt-1 float-left">
                                         <h3 class="mb-0 fw-r">
-                                        
+
                                             <span class="count">
                                             <?php  echo $c_product['total']; ?>
                                             </span>
                                         </h3>
                                         <p class="text-light mt-1 m-0">Productos</p>
                                     </div><!-- /.card-left -->
-    
+
                                     <div class="card-right float-right text-right">
                                         <i class="icon fade-5 icon-lg fas fa-user-friends"></i>
                                     </div><!-- /.card-right -->
-    
+
                                 </div>
-    
+
                             </div>
                         </div>
                         <div class="col-sm-6 col-lg-3">
@@ -55,24 +55,21 @@
                                     <div class="card-body">
                                         <div class="card-left pt-1 float-left">
                                             <h3 class="mb-0 fw-r">
-                                                <span class="count float-left">
-                                                <?php  echo $c_user['total']; ?>
-                                                </span>
-                                                <span></span>
+                                                  <span class="count"><?php  echo $c_user['total']; ?></span>
                                             </h3>
-                                            <p class="text-light mt-1 m-0">Clientes</p>
+                                            <p class="text-light mt-1 m-0"> Clientes Potenciales</p>
                                         </div><!-- /.card-left -->
-        
+
                                         <div class="card-right float-right text-right">
                                             <i class="icon fade-5 icon-lg fas fa-street-view"></i>
                                         </div><!-- /.card-right -->
-        
+
                                     </div>
-        
+
                                 </div>
                             </div>
                             <!--/.col-->
-        
+
                             <div class="col-sm-6 col-lg-3">
                                 <div class="card text-white bg-flat-color-3">
                                     <div class="card-body">
@@ -82,17 +79,17 @@
                                             </h3>
                                             <p class="text-light mt-1 m-0">Categorias</p>
                                         </div><!-- /.card-left -->
-        
+
                                         <div class="card-right float-right text-right">
                                             <i class="icon fade-5 icon-lg fas fa-cubes"></i>
                                         </div><!-- /.card-right -->
-        
+
                                     </div>
-        
+
                                 </div>
                             </div>
                             <!--/.col-->
-        
+
                             <div class="col-sm-6 col-lg-3">
                                 <div class="card text-white bg-flat-color-2">
                                     <div class="card-body">
@@ -103,18 +100,108 @@
                                             </h3>
                                             <p class="text-light mt-1 m-0">Ventas</p>
                                         </div><!-- /.card-left -->
-        
+
                                         <div class="card-right float-right text-right">
                                                 <i class="icon fade-5 icon-lg fas fa-dollar-sign"></i>
                                         </div><!-- /.card-right -->
-        
+
                                     </div>
-        
+
                                 </div>
                             </div>
                             <!--/.col-->
                 </div>
                 <!--/.Home-->
+
+                <!-- GRAFICA -->
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Comida', 'Frecuencia'],
+            <?php
+
+
+                foreach ($products_sold as  $product_sold):
+
+                    echo "['".remove_junk(first_character($product_sold['name']))."',". (int)$product_sold['totalSold']."], ";
+
+                endforeach;
+
+            ?>
+
+
+            ]);
+
+            var options = {
+            title: 'Productos Vendidos',
+             is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+            }
+            </script>
+
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Comida', '$ Total '],
+            <?php
+            foreach ($recent_sales as  $recent_sale):
+
+                    echo "['".remove_junk(first_character($recent_sale['name']))."',".ucfirst($recent_sale['price'])."], ";
+
+            endforeach;
+
+            ?>
+
+
+            ]);
+
+            var options = {
+            title: 'Últimos vendidos',
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('curve_chart2'));
+
+            chart.draw(data, options);
+            }
+            </script>
+
+            <!-- END GRAFICA -->
+
+                    <div class="row">
+                    <div class="col-md-5">
+                            <div class="card">
+                              <div class="card-header">
+                                  <strong class="card-title">Productos más vendidos</strong>
+                              </div>
+
+                            <div id="curve_chart" style="width:100%; height: 300px"></div>
+
+                          </div>  <!-- /.table -card -->
+                      </div> <!-- /.table -col-->
+
+                      <div class="col-md-7">
+                        <div class="card">
+                              <div class="card-header">
+                                <strong class="card-title">Últimas Ventas</strong>
+                              </div>
+
+                              <div id="curve_chart2" style="width: 100%; height: 300px"></div>
+
+                          </div>  <!-- /.table -card -->
+                      </div> <!-- /.table -col-->
+              </div>
                 <!-- Tables about products and categories -->
                 <div class="row">
                     <div class="col-md-6">
@@ -133,10 +220,10 @@
                                                         </thead>
                                                         <tbody>
                                                         <?php foreach ($products_sold as  $product_sold): ?>
-                                                            <tr>                                            
+                                                            <tr>
                                                                 <td><?php echo remove_junk(first_character($product_sold['name'])); ?></td>
                                                                 <td><span class="name"><?php echo (int)$product_sold['totalSold']; ?></span> </td>
-                                                                <td><span class="name"><?php echo (int)$product_sold['totalQty']; ?></span></td>      
+                                                                <td><span class="name"><?php echo (int)$product_sold['totalQty']; ?></span></td>
                                                             </tr>
                                                         <?php endforeach; ?>
                                                         </tbody>
@@ -161,11 +248,11 @@
                                                         </thead>
                                                         <tbody>
                                                         <?php foreach ($recent_sales as  $recent_sale): ?>
-                                                            <tr>     
-                                                                <td><?php echo count_id();?></td>                                       
+                                                            <tr>
+                                                                <td><?php echo count_id();?></td>
                                                                 <td><?php echo remove_junk(first_character($recent_sale['name'])); ?></td>
                                                                 <td><span class="name"><?php echo remove_junk(ucfirst($recent_sale['date'])); ?></span> </td>
-                                                                <td><span class="name">$<?php echo remove_junk(first_character($recent_sale['price'])); ?></span></td>      
+                                                                <td><span class="name">$<?php echo remove_junk(first_character($recent_sale['price'])); ?></span></td>
                                                             </tr>
                                                         <?php endforeach; ?>
                                                         </tbody>
@@ -177,8 +264,8 @@
 
                     <!-- Cards Products -->
                 <div class="row">
-                    <?php foreach ($recent_products as  $recent_product): ?>  
-                   
+                    <?php foreach ($recent_products as  $recent_product): ?>
+
                     <div class="col-md-4">
                         <a href="f_edit_product.php?id=<?php echo    (int)$recent_product['id'];?>">
                             <div class="card border border-primary">
@@ -196,7 +283,7 @@
                                                 <img class="rounded-circle mx-auto d-block" src="uploads/products/<?php echo $recent_product['image'];?>">
                                             </div>
                                         <?php endif;?>
-                                        
+
                                         <div class="location text-sm-center">Precio: $<?php echo (int)$recent_product['sale_price']; ?></div>
                                         <div class="location text-sm-center">Categoría: <?php echo remove_junk(first_character($recent_product['categorie'])); ?></div>
                                     </div>
@@ -208,11 +295,11 @@
                             </div>
                         </a>
                     </div>
-                    
-                    <?php endforeach; ?>    
-                </div> 
+
+                    <?php endforeach; ?>
+                </div>
                 <!-- end row -->
-                
+
             </div>
             <!-- .animated -->
         </div>
