@@ -73,7 +73,11 @@
                                                                 <td> <span class="count"><?php echo (int)$sale['qty']; ?></span> </td>
                                                                 <td><span class="pruduct"><?php echo remove_junk($sale['price']); ?></span></td>
                                                                 <td><span><?php echo $sale['date']; ?></span></td>
-                                                                <td><span><?php echo $sale['status']; ?></span></td>
+                                                                <?php if($sale['status'] === '1'): ?>
+                                                                <td>  <span class="badge badge-complete">Atendida</span> </td>
+                                                                <?php else: ?>
+                                                                <td>  <span class="badge badge-pending">Pendiente</span> </td>
+                                                                <?php endif;?>
                                                                 <td class="text-center">
                                                                    <a href="f_delete_sale.php?id=<?php echo (int)$sale['id'];?>"> <span class="badge badge-eliminar">Eliminar</span></a>
                                                                 </td>

@@ -17,16 +17,18 @@ if (isset($end_date) == false) {
     $results      = find_sale_by_dates($start_date,$end_date);
 }
 
+/**REVIEW  */
+
 if(($results->num_rows) > 0){
     foreach($results as $result): 
         $salida = "<tr>";
+        $salida .= " <td><span>" . print( $results->num_rows) ."</span></td>";
         $salida .= " <td><span>" . remove_junk($result['date']) ."</span></td>";
         $salida .= " <td>  <span class='name'>" . remove_junk($result['name']) ." </span> </td>" ;
         $salida .= "    <td> <span class='product'>" . remove_junk($result['buy_price'])."</span> </td>";
         $salida .= "    <td><span class='product'>" . remove_junk($result['sale_price'])."</span></td>";
         $salida .= "    <td><span>" . remove_junk($result['total_sales'])."</span></td>";
         $salida .= "    <td><span>" . remove_junk($result['total_saleing_price'])."</span></td>";
-        
         $salida .= "</tr>";
        
     endforeach; 
