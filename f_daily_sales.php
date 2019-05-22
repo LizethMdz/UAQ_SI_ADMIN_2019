@@ -80,7 +80,7 @@
                                                                 <td><span class="product">$ <?php echo remove_junk($sale['total_saleing_price']); ?></span></td>
                                                                 <td><span><?php echo date("d/m/Y", strtotime ($sale['date'])); ?></span></td>
                                                                 <td class="text-center">
-                                                                    <span class="badge badge-eliminar">Eliminar</span>
+                                                                <a href="p_delete_sale.php?id=<?php echo (int)$sale['id'];?>"><span class="badge badge-eliminar">Eliminar</span></a>
                                                                 </td>
                                                             </tr>
                                                         <?php endforeach;?>
