@@ -255,6 +255,26 @@ function tableExists($table){
     return($db->affected_rows() === 1 ? true : false);
 
   }
+
+  /*--------------------------------------------------------------*/
+  /* Function for Update sales status
+  /*--------------------------------------------------------------*/
+
+  function update_sale_by_id($s_id, $s_state){
+    global $db;
+    $state = (int) $s_state;
+    $id  = (int)$s_id;
+    $sql = "UPDATE sales SET status= '{$state}' WHERE id = '{$id}'";
+    $result = $db->query($sql);
+    return($db->affected_rows() === 1 ? true : false);
+
+  }
+
+
+
+
+
+
   /*--------------------------------------------------------------*/
   /* Function for Display Recent product Added
   /*--------------------------------------------------------------*/

@@ -40,7 +40,11 @@
         <div class="content">
             <!-- Animated -->
             <div class="animated fadeIn">
-
+            <div class="row">
+                <div class="col-md-12">
+                    <?php echo display_msg($msg); ?>
+                </div>
+            </div>
             <!--  Sales List  -->
             <div class="row">
                     <div class="col-lg-12">
@@ -79,7 +83,8 @@
                                                                 <td>  <span class="badge badge-pending">Pendiente</span> </td>
                                                                 <?php endif;?>
                                                                 <td class="text-center">
-                                                                   <a href="f_delete_sale.php?id=<?php echo (int)$sale['id'];?>"> <span class="badge badge-eliminar">Eliminar</span></a>
+                                                                   <a href="p_delete_sale.php?id=<?php echo (int)$sale['id'];?>"> <span class="badge badge-eliminar">Eliminar</span></a>
+                                                                   <a id="btn-disable" href="p_update_sale.php?id=<?php echo (int)$sale['id'];?>"> <span class="badge badge-enviar">Actualizar</span></a>
                                                                 </td>
                                                             </tr>
                                                         <?php endforeach;?>
