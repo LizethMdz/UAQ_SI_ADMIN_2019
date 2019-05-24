@@ -304,7 +304,7 @@ function tableExists($table){
  /*--------------------------------------------------------------*/
  function find_all_sale(){
    global $db;
-   $sql  = "SELECT s.id,s.qty,s.price,s.date,p.name, s.status";
+   $sql  = "SELECT s.id,s.qty,s.price,s.date,p.name, s.status, s.direccion";
    $sql .= " FROM sales s";
    $sql .= " LEFT JOIN products p ON s.product_id = p.id";
    $sql .= " ORDER BY s.date DESC";

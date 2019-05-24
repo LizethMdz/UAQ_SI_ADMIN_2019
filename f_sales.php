@@ -66,6 +66,7 @@
                                                                 <th>Total</th>
                                                                 <th>Fecha</th>
                                                                 <th>Estado</th>
+                                                                <th>Dirección</th>
                                                                 <th class="text-center">Acciones</th>
                                                             </tr>
                                                         </thead>
@@ -73,7 +74,7 @@
                                                         <?php foreach ($sales as $sale):?>
                                                             <tr>
                                                                 <td class="serial"><?php echo count_id();?></td>
-                                                                <td>  <span class="name"><?php echo remove_junk($sale['name']); ?></span> </td>
+                                                                <td>  <span class="name"><?php echo remove_junk(utf8_encode($sale['name'])); ?></span> </td>
                                                                 <td> <span class="count"><?php echo (int)$sale['qty']; ?></span> </td>
                                                                 <td><span class="pruduct"><?php echo remove_junk($sale['price']); ?></span></td>
                                                                 <td><span><?php echo $sale['date']; ?></span></td>
@@ -82,8 +83,10 @@
                                                                 <?php else: ?>
                                                                 <td>  <span class="badge badge-pending">Pendiente</span> </td>
                                                                 <?php endif;?>
+                                                                <td><span class="name"><?php echo remove_junk(utf8_encode($sale['direccion'])); ?></span></td>
                                                                 <td class="text-center">
                                                                    <a href="p_delete_sale.php?id=<?php echo (int)$sale['id'];?>"> <span class="badge badge-eliminar">Eliminar</span></a>
+                                                                   <br><br>
                                                                    <a id="btn-disable" href="p_update_sale.php?id=<?php echo (int)$sale['id'];?>"> <span class="badge badge-enviar">Actualizar</span></a>
                                                                 </td>
                                                             </tr>
