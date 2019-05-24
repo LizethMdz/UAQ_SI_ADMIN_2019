@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link rel="shortcut icon" href="images/FUNVEGANO - ICON.ico">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/login.css">
 
@@ -32,7 +32,7 @@
 <div class='login'>
   <div class='login_title'>
     <span>Iniciar Sesión</span>
-    <img src='images/FUNVEGANO - ICON.png' class="img-logo" width="50" height="50">
+    <img src='images/green-life_SF.png' class="img-logo" width="55" height="55">
   </div>
   <form action="p_auth.php" method="post">
       <div class='login_fields'>
@@ -40,7 +40,7 @@
         <div class='icon'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png'>
         </div>
-        <input name="username" placeholder='Username' type='text' >
+        <input name="username" placeholder='Nombre de usuario' type='text' >
 
         </input>
       </div>
@@ -48,11 +48,11 @@
         <div class='icon'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/lock_icon_copy.png'>
         </div>
-        <input name="password" placeholder='Password' type='password'>
+        <input name="password" placeholder='Contraseña' type='password'>
 
       </div>
       <div class='login_fields__submit'>
-        <input type='submit' value='Log In'>
+        <input type='submit' value='Iniciar Sesión'>
         
       </div>
     </div>

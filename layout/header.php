@@ -7,7 +7,7 @@
     <title>Dashboard</title>
     <meta name="description" content="FunVegano">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/LOGO-ICON.ico">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
@@ -38,7 +38,7 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="images/LOGO-FINAL.png" alt="Logo" height="40px" width="80px"></a>
+                    <a class="navbar-brand" href="./"><img src="images/green-life_SF.png" alt="Logo" height="40px" width="40px"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>

@@ -6,6 +6,9 @@
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+                    <li>
+                    <a class="navbar-brand ml-3" href="./"><img src="images/green-life_v2.png" alt="Logo" height="150px" width="150px"></a>
+                    </li>
                     <li class="active">
                         <a href="f_home.php"><i class="menu-icon fas fa-warehouse"></i>Dashboard </a>
                     </li>
