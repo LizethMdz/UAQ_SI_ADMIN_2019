@@ -13,15 +13,14 @@
 
   if($u_status == 0){
         $u_status = 1;
-        redirect('f_sales.php');
         $update_status = update_sale_by_id((int)$u_sale['id'], $u_status);
         if($update_status){
             update_product_qty($u_sale['qty'], (int)$u_sale['product_id']);
 
-            $session->msg("s","Venta atendida.");
+            $session->msg("s","Venta atendida exitosamente!!! .");
             redirect('f_sales.php');
         } else {
-            $session->msg("d","Veta no actualizada");
+            $session->msg("d","Venta no actualizada, verifica");
             redirect('f_sales.php');
         }
   }else{

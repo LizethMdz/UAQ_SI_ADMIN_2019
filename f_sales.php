@@ -86,8 +86,8 @@
                                                                 <td><span class="name"><?php echo remove_junk(utf8_encode($sale['direccion'])); ?></span></td>
                                                                 <td class="text-center">
                                                                    <a href="p_delete_sale.php?id=<?php echo (int)$sale['id'];?>"> <span class="badge badge-eliminar">Eliminar</span></a>
-                                                                   <br><br>
-                                                                   <a id="btn-disable" href="p_update_sale.php?id=<?php echo (int)$sale['id'];?>"> <span class="badge badge-enviar">Actualizar</span></a>
+                                                                   
+                                                                   <a id="btn-disable" href="p_update_sale.php?id=<?php echo (int)$sale['id']; ?>"> <span class="badge badge-enviar">Actualizar</span></a>
                                                                 </td>
                                                             </tr>
                                                         <?php endforeach;?>
